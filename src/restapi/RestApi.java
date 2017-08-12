@@ -31,7 +31,6 @@ public class RestApi {
 		System.out.println(httpResponse+"\n\n\n"); 
 		 System.out.println(result+"\n\n"); 
 		 
-		
-	}
+			}
 
 }
