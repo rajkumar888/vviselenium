@@ -52,14 +52,28 @@ public class ActionsClassDemo {
 		
 	
 	
-		WebElement ele = driver.findElement(By.xpath("//*[@id='login_form']/table/tbody/tr[3]/td[2]/div/a"));
+		try {
+			WebElement ele = driver.findElement(By.xpath("//*[@id='log8888in_form']/table/tbody/tr[3]/td[2]/div/a"));
+			
+			
+			//act.keyDown(Keys.LEFT_SHIFT).click(ele).keyUp(Keys.LEFT_SHIFT).build().perform();
+			
+			act.moveToElement(ele).contextClick().sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).build().perform();
+		} 
+		catch (Exception e) {
+			
+			//e.printStackTrace();
+		System.out.println(e.getMessage());
+			
+			System.out.println("we are in catch block");
+		}
+		
+		finally{
+			System.out.println("we are in finally block");
+		}
 		
 		
-		//act.keyDown(Keys.LEFT_SHIFT).click(ele).keyUp(Keys.LEFT_SHIFT).build().perform();
-		
-		act.moveToElement(ele).contextClick().sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).build().perform();
-		
-		
+		System.out.println("end of program");
 	
 	//	driver.quit();
 	

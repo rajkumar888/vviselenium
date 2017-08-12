@@ -1,4 +1,4 @@
-package aug2017;
+package restapi;
 
 import java.io.IOException;
 import org.apache.http.HttpResponse;
@@ -27,22 +27,11 @@ public class RestApi {
 		 // Convert the response to a String format 
 		 
 		 String result = EntityUtils.toString(httpResponse.getEntity()); 
-		 
-		 // Convert the result as a String to a JSON object 
-		 JsonObject jo = (JsonObject) new JsonParser().parse(result); 
-		 
-		 // Convert the inner result as a String to a JSON object 
-		 JsonObject joData = (JsonObject) jo.get("data"); 
-		 
-
-		 System.out.println(httpResponse+"\n\n\n"); 
+		 	
+		System.out.println(httpResponse+"\n\n\n"); 
 		 System.out.println(result+"\n\n"); 
-			
 		 
-		 System.out.println(jo); 
-		 System.out.println(jo.get("status")); 
-		 System.out.println(joData.get("sid"));
-
+		
 	}
 
 }

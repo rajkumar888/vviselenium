@@ -1,6 +1,7 @@
 package aug;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -18,8 +19,9 @@ public class Demo1 {
 		driver.get("https://www.facebook.com");
 		
 	
-		driver.findElement(By.xpath("//*[@id='email']")).getSize();
+		Dimension var = driver.findElement(By.xpath("//*[@id='email']")).getSize();
 		
+		System.out.println(var);
 		
 		System.out.println(driver.findElement(By.xpath("//*[@id='email']")).getSize());
 		
