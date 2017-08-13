@@ -19,7 +19,7 @@ public class WheatherGetRequestApi
 {
 
 
-		@Test(enabled=false)
+		@Test()
 		public void test001() throws ParseException, IOException
 		{
 		String str="http://eupathdb.org/webservices/GeneQuestions/GenesByMolecularWeight.wadl";
@@ -44,11 +44,11 @@ public class WheatherGetRequestApi
 		@Test
 		public void test002() 
 		{
-			Response respone =RestAssured.when()
+Response respone =RestAssured.when()
 					.get("http://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b1b15e88fa797225412429c1c50c122a1");
 		
 		System.out.println(respone.getStatusCode());
-		System.out.println(respone.asString());
+		//System.out.println(respone.asString());
 			
 		System.out.println(respone.contentType());
 				
@@ -63,9 +63,4 @@ public class WheatherGetRequestApi
 		
 		
 		}
-		
-		
-		
-		
-		
 }

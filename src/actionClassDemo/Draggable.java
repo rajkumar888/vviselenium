@@ -1,4 +1,4 @@
-package demoScreenshot;
+package actionClassDemo;
 
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
@@ -13,7 +13,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.List;
 
-public class MultipleSelect2 {
+public class Draggable {
 
 	public static void main(String[] args) throws InterruptedException {
 		
@@ -21,37 +21,28 @@ public class MultipleSelect2 {
 		WebDriver driver = new ChromeDriver();
 		
 		
-			  driver.get("http://jqueryui.com/selectable/");
+		driver.get("http://jqueryui.com/draggable/");
+		
+		System.out.println(driver.getTitle());
 
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
+		driver.manage().window().maximize();
 
 		driver.switchTo().frame(0);
-
-		List<WebElement> selectOption = driver.findElements(By.xpath("html/body/ol/li"));
-
+		
+		
 		Actions act = new Actions(driver);
-			
-		System.out.println(selectOption.size());
 		
 		
-		act.keyDown(Keys.LEFT_CONTROL).perform();
-
-		for (int i = 1; i < selectOption.size(); i++) {
-
-			if (i % 2 == 0) {
-				
-				Thread.sleep(1000);
-				
-				act.click(selectOption.get(i-1)).perform();
-				
-				System.out.println(selectOption.get(i - 1).getText() + " is Selected");
-			}
-		}	// end of for loop
 		
-		act.keyUp(Keys.LEFT_CONTROL).perform();
+		WebElement ele = driver.findElement(By.xpath("//*[@id='draggable']/p"));
 		
-
-		driver.close();
+		
+		act.clickAndHold(ele).moveByOffset(200, 100).release(ele).build().perform();
+		
+		
+		//driver.close();
 
 	}
 

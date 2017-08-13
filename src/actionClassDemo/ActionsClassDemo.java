@@ -1,4 +1,4 @@
-package aug;
+package actionClassDemo;
 
 import java.util.concurrent.TimeUnit;
 
@@ -55,7 +55,7 @@ public class ActionsClassDemo {
 		try {
 			WebElement ele = driver.findElement(By.xpath("//*[@id='log8888in_form']/table/tbody/tr[3]/td[2]/div/a"));
 			
-			
+		
 			//act.keyDown(Keys.LEFT_SHIFT).click(ele).keyUp(Keys.LEFT_SHIFT).build().perform();
 			
 			act.moveToElement(ele).contextClick().sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).build().perform();

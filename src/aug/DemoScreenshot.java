@@ -1,4 +1,4 @@
-package demoScreenshot;
+package aug;
 
 import java.io.File;
 import java.io.IOException;
