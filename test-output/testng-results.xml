@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="1" ignored="0" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="1824" started-at="2017-08-13T19:49:47Z" finished-at="2017-08-13T19:49:49Z">
+  <suite name="Default suite" duration-ms="1710" started-at="2017-08-17T19:02:05Z" finished-at="2017-08-17T19:02:06Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="1824" started-at="2017-08-13T19:49:47Z" finished-at="2017-08-13T19:49:49Z">
+    <test name="Default test" duration-ms="1710" started-at="2017-08-17T19:02:05Z" finished-at="2017-08-17T19:02:06Z">
       <class name="restapi.WheatherGetRequestApi">
-        <test-method status="PASS" signature="test001()[pri:0, instance:restapi.WheatherGetRequestApi@acaea5]" name="test001" duration-ms="1795" started-at="2017-08-14T01:19:47Z" finished-at="2017-08-14T01:19:49Z">
+        <test-method status="PASS" signature="test001()[pri:0, instance:restapi.WheatherGetRequestApi@18355a8]" name="test001" duration-ms="1609" started-at="2017-08-18T00:32:05Z" finished-at="2017-08-18T00:32:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test001 -->
-        <test-method status="FAIL" signature="test002()[pri:0, instance:restapi.WheatherGetRequestApi@acaea5]" name="test002" duration-ms="5" started-at="2017-08-14T01:19:49Z" finished-at="2017-08-14T01:19:49Z">
+        <test-method status="FAIL" signature="test002()[pri:0, instance:restapi.WheatherGetRequestApi@18355a8]" name="test002" duration-ms="14" started-at="2017-08-18T00:32:06Z" finished-at="2017-08-18T00:32:06Z">
           <exception class="java.lang.NoClassDefFoundError">
             <message>
               <![CDATA[groovy/lang/GroovyObject]]>
@@ -31,7 +31,7 @@
 	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
 	at java.lang.ClassLoader.loadClass(Unknown Source)
 	at com.jayway.restassured.RestAssured.<clinit>(RestAssured.java:349)
-	at restapi.WheatherGetRequestApi.test002(WheatherGetRequestApi.java:47)
+	at restapi.WheatherGetRequestApi.test002(WheatherGetRequestApi.java:48)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)

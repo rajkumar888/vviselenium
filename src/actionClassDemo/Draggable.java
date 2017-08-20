@@ -15,9 +15,12 @@ import java.util.List;
 
 public class Draggable {
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException  {
 		
-
+		//System.setProperty("webdriver.gecko.driver", "D:\\Saurabh\\Driver\\geckodriver.exe");
+		
+		//System.setProperty("webdriver.chrome.driver", "D:\\Saurabh\\Driver\\geckodriver.exe");
+		
 		WebDriver driver = new ChromeDriver();
 		
 		
@@ -35,14 +38,14 @@ public class Draggable {
 		Actions act = new Actions(driver);
 		
 		
-		
 		WebElement ele = driver.findElement(By.xpath("//*[@id='draggable']/p"));
 		
 		
-		act.clickAndHold(ele).moveByOffset(200, 100).release(ele).build().perform();
+		act.clickAndHold(ele).moveByOffset(200, 0).release(ele).build().perform();
 		
+		Thread.sleep(3000);
 		
-		//driver.close();
+		driver.close();
 
 	}
 

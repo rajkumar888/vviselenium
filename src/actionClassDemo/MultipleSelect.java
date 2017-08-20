@@ -23,6 +23,8 @@ public class MultipleSelect {
 		driver.get("http://jqueryui.com/selectable/");
 
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
+		driver.manage().window().maximize();
 
 		driver.switchTo().frame(0);
 
@@ -35,22 +37,25 @@ public class MultipleSelect {
 		
 		act.keyDown(Keys.LEFT_CONTROL).perform();
 
-		for (int i = 1; i < selectOption.size(); i++) {
+		for (int i = 0; i < selectOption.size()-3; i++) {
 
-			if (i % 2 == 0) {
+			//if (i % 2 == 0) {
 				
-				Thread.sleep(1000);
+				Thread.sleep(2000);
 				
-				act.click(selectOption.get(i-1)).perform();
+				//act.click(selectOption.get(i-1)).perform();
+				act.click(selectOption.get(i)).perform();
 				
-				System.out.println(selectOption.get(i - 1).getText() + " is Selected");
-			}
+				//System.out.println(selectOption.get(i - 1).getText() + " is Selected");
+				System.out.println(selectOption.get(i).getText() + " is Selected");
+			//}
 		}	// end of for loop
 		
 		act.keyUp(Keys.LEFT_CONTROL).perform();
 		
+		Thread.sleep(5000);
 
-		// driver.close();
+		 driver.close();
 
 	}
 
