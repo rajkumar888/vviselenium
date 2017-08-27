@@ -5,20 +5,20 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
-
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class Autosuggest {
+public class Autosuggest2 {
 	
 	//public class Ajax_Handle {
 	public static void main(String[] args) throws InterruptedException {
 	
-		WebDriver driver = new FirefoxDriver();
+		//WebDriver driver = new FirefoxDriver();
 		
-		//WebDriver driver = new ChromeDriver();
+		WebDriver driver = new ChromeDriver();
 		
 		 
 				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -26,33 +26,28 @@ public class Autosuggest {
 				
 				driver.get("http://www.google.com");
 				
-				driver.findElement(By.id("lst-ib")).sendKeys("hello");
+				driver.findElement(By.id("lst-ib")).sendKeys("selenium", Keys.ENTER);
 
-				Thread.sleep(2000);
 				
 				
+				List<WebElement> alllink = driver.findElements(By.xpath("//h3/a"));
 				
 				
+				System.out.println(alllink.size());
 				
-				 List<WebElement> allitems = driver.findElements(By.xpath("html/body/div/div[3]/form/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div/ul/li"));
+				
+				for(int i=0 ;   i < alllink.size() ; i++ )
+				{		
+					alllink = driver.findElements(By.xpath("//h3/a"));
 					
-				System.out.println(allitems.size());
-				
-				
-				for(int i=0; i<allitems.size() ; i++)
-				{
-					String temp=allitems.get(i).getText();
-
-					System.out.println(temp);
+					//System.out.println(alllink.get(i).getText());
 					
+					alllink.get(i).click();
 					
 					
-					if(i==3)
-					{
-						allitems.get(i).click(); 
-						break;
-						
-					}
+					System.out.println(driver.getTitle());
+					
+					driver.navigate().back();
 				}
 	}
 			}
