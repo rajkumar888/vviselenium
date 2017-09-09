@@ -16,6 +16,7 @@ public class Autosuggest {
 	//public class Ajax_Handle {
 	public static void main(String[] args) throws InterruptedException {
 	
+		long temp1 = System.currentTimeMillis();
 		WebDriver driver = new FirefoxDriver();
 		
 		//WebDriver driver = new ChromeDriver();
@@ -25,6 +26,10 @@ public class Autosuggest {
 				//driver.manage().window().maximize();
 				
 				driver.get("http://www.google.com");
+				
+				long temp2 = System.currentTimeMillis();
+				
+				System.out.println("page load time = "+(temp2-temp1)/1000);
 				
 				driver.findElement(By.id("lst-ib")).sendKeys("hello");
 
